@@ -1,3 +1,4 @@
+Orangel Mendez
 # DOM I - JavaScript Content Management System
 
 ## Project Description
