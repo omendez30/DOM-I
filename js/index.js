@@ -59,12 +59,17 @@ let navBar = document.querySelectorAll("nav a");
 // });
 
 for (let i = 0; i < navBar.length; i++) {
-  navBar[i].setAttribute("id", "nav-item-" + (i + 1));
+  navBar[i].setAttribute("id", "nav-item-" + (i + 1)); //nav bar index is given an id with nav items incremeting each loop
   navBar[i].textContent = siteContent["nav"][navBar[i].getAttribute("id")];
 }
 //h1 tag
 let h1 = document.querySelector("h1");
 h1.textContent = siteContent.cta.h1;
+
+// const h1 = document.querySelector(".cta .cta-text h1"); // make sure to grab the parent classes to h1
+
+// const content = siteContent.cta.h1.split(" "); //splits the content of h1 into an array
+// console.log(content);
 
 //button tag
 let btn = document.querySelector("button");
@@ -74,7 +79,8 @@ let mainImg = document.getElementById("cta-img");
 mainImg.setAttribute("src", siteContent.cta["img-src"]);
 //h4 tags
 let h4 = document.querySelectorAll("h4");
-h4.forEach(a => (a.textContent = siteContent["main-content"]));
 
-//p tags
-let p = document.querySelectorAll("p");
+for (let i = 0; i < h4.length; i++) {
+  h4[i].setAttribute("id", h4[i] + "-h4");
+  h4[i].textContent = siteContent["main-content"][h4[i].getAttribute("id")];
+}
