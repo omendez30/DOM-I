@@ -49,12 +49,16 @@ logo.setAttribute("src", siteContent["nav"]["img-src"]);
 // let service = document.querySelector("a");
 // service.textContent = siteContent["nav"]["nav-item-1"];
 
-// let product = document.querySelector("a");
+// let product = document.querySelectorAll("a");
 // product.textContent = siteContent["nav"]["nav-item-2"];
 // let navBar = [...document.querySelectorAll("a")];
 
-// navBar.map(a => {
+// navBar.forEach(a => {
 //   a.textContent = siteContent.nav.;
 // });
 let h1 = document.querySelector("h1");
-h1.textContent = "Dom Is Awesome";
+h1.textContent = siteContent.cta.h1;
+
+let btn = document.querySelector("button");
+btn.setAttribute("src", siteContent["cta"]["img-src"]);
+btn.textContent = siteContent.cta.button;
