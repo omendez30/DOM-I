@@ -56,9 +56,14 @@ logo.setAttribute("src", siteContent["nav"]["img-src"]);
 // navBar.forEach(a => {
 //   a.textContent = siteContent.nav.;
 // });
+
+//h1 tag
 let h1 = document.querySelector("h1");
 h1.textContent = siteContent.cta.h1;
 
+//button tag
 let btn = document.querySelector("button");
-btn.setAttribute("src", siteContent["cta"]["img-src"]);
 btn.textContent = siteContent.cta.button;
+
+let mainImg = document.getElementById("cta-img");
+mainImg.setAttribute("src", siteContent.cta["img-src"]);
