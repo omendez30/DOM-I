@@ -51,12 +51,17 @@ logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
 // let product = document.querySelectorAll("a");
 // product.textContent = siteContent["nav"]["nav-item-2"];
-// let navBar = [...document.querySelectorAll("a")];
+let navBar = document.querySelectorAll("nav a");
 
 // navBar.forEach(a => {
-//   a.textContent = siteContent.nav.;
+//   a.textContent = siteContent.nav;
+//   console.log(a.keys);
 // });
 
+for (let i = 0; i < navBar.length; i++) {
+  navBar[i].setAttribute("id", "nav-item-" + (i + 1));
+  navBar[i].textContent = siteContent["nav"][navBar[i].getAttribute("id")];
+}
 //h1 tag
 let h1 = document.querySelector("h1");
 h1.textContent = siteContent.cta.h1;
@@ -64,6 +69,12 @@ h1.textContent = siteContent.cta.h1;
 //button tag
 let btn = document.querySelector("button");
 btn.textContent = siteContent.cta.button;
-
+//main header img
 let mainImg = document.getElementById("cta-img");
 mainImg.setAttribute("src", siteContent.cta["img-src"]);
+//h4 tags
+let h4 = document.querySelectorAll("h4");
+h4.forEach(a => (a.textContent = siteContent["main-content"]));
+
+//p tags
+let p = document.querySelectorAll("p");
