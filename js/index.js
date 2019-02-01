@@ -77,10 +77,9 @@ btn.textContent = siteContent.cta.button;
 //main header img
 let mainImg = document.getElementById("cta-img");
 mainImg.setAttribute("src", siteContent.cta["img-src"]);
+
+//middle image
+let midImg = document.getElementById("middle-img");
+midImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 //h4 tags
 let h4 = document.querySelectorAll("h4");
-
-for (let i = 0; i < h4.length; i++) {
-  h4[i].setAttribute("id", h4[i] + "-h4");
-  h4[i].textContent = siteContent["main-content"][h4[i].getAttribute("id")];
-}
