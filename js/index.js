@@ -87,23 +87,27 @@ midImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 let h4 = document.querySelectorAll(".text-content h4");
 
 // h4.forEach(
-//   h => h.setAttribute("class", `${siteContent["main-content"].}-content`)
-//   //(h.textContent = siteContent["main-content"].childNodes);
+//   (obj, prop) => {
+//     if (Object.keys(prop === "-h4")) {
+//       console.log(obj);
+//     }
+//   }
+//obj.setAttribute("id", `${siteContent["main-content"].prop}-h4`)
+//(h.textContent = siteContent["main-content"].childNodes);
 // );
 
 // let header4 = Array.from(h4);
-let contentProp = Object.getOwnPropertyNames(siteContent["main-content"]);
+// let contentProp = Object.getOwnPropertyNames(siteContent["main-content"]);
+// for (let i = 0; i < h4.length; i++) {
+//   if (Object.keys(siteContent["main-content"] === "-h4")) {
+//     h4[i].setAttribute("id", siteContent["main-content"]);
+//     h4.textContent = siteContent["main-content"];
+//   }
+// }
+
 for (let i = 0; i < h4.length; i++) {
-  if (contentProp[i].includes("-h4")) {
-    //
-    //
-    h4[i].setAttribute("id", siteContent["main-content"][contentProp[0]]);
-    h4.textContent = siteContent["main-content"][contentProp[i]];
+  h4[i].setAttribute("id", Object.keys(siteContent["main-content"]));
+  if (Object.keys(siteContent["main-content"])) {
+    h4[i].textContent = Object.values(siteContent["main-content"]);
   }
 }
-
-//h4.forEach((items, index) => console.log(items, index));
-//   //  h.textContent = siteContent["main-content"].childN)
-// );
-//
-console.log(contentProp);
