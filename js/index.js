@@ -81,5 +81,29 @@ mainImg.setAttribute("src", siteContent.cta["img-src"]);
 //middle image
 let midImg = document.getElementById("middle-img");
 midImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
 //h4 tags
-let h4 = document.querySelectorAll("h4");
+
+let h4 = document.querySelectorAll(".text-content h4");
+
+// h4.forEach(
+//   h => h.setAttribute("class", `${siteContent["main-content"].}-content`)
+//   //(h.textContent = siteContent["main-content"].childNodes);
+// );
+
+// let header4 = Array.from(h4);
+let contentProp = Object.getOwnPropertyNames(siteContent["main-content"]);
+for (let i = 0; i < h4.length; i++) {
+  if (contentProp[i].includes("-h4")) {
+    //
+    //
+    h4[i].setAttribute("id", siteContent["main-content"][contentProp[0]]);
+    h4.textContent = siteContent["main-content"][contentProp[i]];
+  }
+}
+
+//h4.forEach((items, index) => console.log(items, index));
+//   //  h.textContent = siteContent["main-content"].childN)
+// );
+//
+console.log(contentProp);
