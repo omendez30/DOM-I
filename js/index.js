@@ -1,5 +1,5 @@
 const siteContent = {
-  "nav": {
+  nav: {
     "nav-item-1": "Services",
     "nav-item-2": "Product",
     "nav-item-3": "Vision",
@@ -8,35 +8,106 @@ const siteContent = {
     "nav-item-6": "Contact",
     "img-src": "img/logo.png"
   },
-  "cta": {
-    "h1": "DOM Is Awesome",
-    "button": "Get Started",
+  cta: {
+    h1: "DOM Is Awesome",
+    button: "Get Started",
     "img-src": "img/header-img.png"
   },
   "main-content": {
-    "features-h4":"Features",
-    "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "about-h4":"About",
-    "about-content": "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "features-h4": "Features",
+    "features-content":
+      "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "about-h4": "About",
+    "about-content":
+      "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
     "middle-img-src": "img/mid-page-accent.jpg",
-    "services-h4":"Services",
-    "services-content": "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "product-h4":"Product",
-    "product-content": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "vision-h4":"Vision",
-    "vision-content": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "services-h4": "Services",
+    "services-content":
+      "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "product-h4": "Product",
+    "product-content":
+      "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "vision-h4": "Vision",
+    "vision-content":
+      "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
   },
-  "contact": {
-    "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
-    "phone" : "1 (888) 888-8888",
-    "email" : "sales@greatidea.io",
+  contact: {
+    "contact-h4": "Contact",
+    address: "123 Way 456 Street Somewhere, USA",
+    phone: "1 (888) 888-8888",
+    email: "sales@greatidea.io"
   },
-  "footer": {
-    "copyright" : "Copyright Great Idea! 2018"
-  },
+  footer: {
+    copyright: "Copyright Great Idea! 2018"
+  }
 };
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute("src", siteContent["nav"]["img-src"]);
+
+// let service = document.querySelector("a");
+// service.textContent = siteContent["nav"]["nav-item-1"];
+
+// let product = document.querySelectorAll("a");
+// product.textContent = siteContent["nav"]["nav-item-2"];
+let navBar = document.querySelectorAll("nav a");
+
+// navBar.forEach(a => {
+//   a.textContent = siteContent.nav;
+//   console.log(a.keys);
+// });
+
+for (let i = 0; i < navBar.length; i++) {
+  navBar[i].setAttribute("id", "nav-item-" + (i + 1)); //nav bar index is given an id with nav items incremeting each loop
+  navBar[i].textContent = siteContent["nav"][navBar[i].getAttribute("id")];
+}
+//h1 tag
+let h1 = document.querySelector("h1");
+h1.textContent = siteContent.cta.h1;
+
+// const h1 = document.querySelector(".cta .cta-text h1"); // make sure to grab the parent classes to h1
+
+// const content = siteContent.cta.h1.split(" "); //splits the content of h1 into an array
+// console.log(content);
+
+//button tag
+let btn = document.querySelector("button");
+btn.textContent = siteContent.cta.button;
+//main header img
+let mainImg = document.getElementById("cta-img");
+mainImg.setAttribute("src", siteContent.cta["img-src"]);
+
+//middle image
+let midImg = document.getElementById("middle-img");
+midImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+//h4 tags
+
+let h4 = document.querySelectorAll(".text-content h4");
+
+// h4.forEach(
+//   (obj, prop) => {
+//     if (Object.keys(prop === "-h4")) {
+//       console.log(obj);
+//     }
+//   }
+//obj.setAttribute("id", `${siteContent["main-content"].prop}-h4`)
+//(h.textContent = siteContent["main-content"].childNodes);
+// );
+
+// let header4 = Array.from(h4);
+// let contentProp = Object.getOwnPropertyNames(siteContent["main-content"]);
+// for (let i = 0; i < h4.length; i++) {
+//   if (Object.keys(siteContent["main-content"] === "-h4")) {
+//     h4[i].setAttribute("id", siteContent["main-content"]);
+//     h4.textContent = siteContent["main-content"];
+//   }
+// }
+
+for (let i = 0; i < h4.length; i++) {
+  h4[i].setAttribute("id", Object.keys(siteContent["main-content"]));
+  if (Object.keys(siteContent["main-content"])) {
+    h4[i].textContent = Object.values(siteContent["main-content"]);
+  }
+}
